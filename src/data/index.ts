@@ -14,14 +14,22 @@ const raw = [
 ] as [string, number, ...number[]][];
 
 class Song {
-  readonly ageGroups: number[];
+  readonly groups: number[];
 
   constructor(
     readonly name: string,
     readonly totalVotes: number,
-    ...ageGroups: number[]
+    ...groups: number[]
   ) {
-    this.ageGroups = ageGroups;
+    this.groups = groups;
+  }
+
+  get totalPoints() {
+    return this.groups.reduce((a, b) => a + b);
+  }
+
+  get shares() {
+    return this.groups.map(points => points / this.totalPoints);
   }
 }
 
