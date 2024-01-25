@@ -55,7 +55,7 @@ class Song {
 
   get Shares() {
     return (() => <div>
-      {this.shares.map((share, i) => (<div key={i}
+      {this.shares.map((share, i) => share > 0 && (<div key={i}
         style={{
           width: (share * 100).toFixed(3) + '%'
         }}
