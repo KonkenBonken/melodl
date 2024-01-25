@@ -10,9 +10,12 @@ export default function Main() {
   const Goal = useMemo(() => data[floor(random() * data.length)], []);
   console.log(Goal);
 
-  return (
+  return (<main>
     <h1 className={scss.header}>
-      Hello World
+      Melodl 2023
     </h1>
-  );
+    <div className={scss.shares}>
+      <Goal.Shares />
+    </div>
+  </main>);
 }

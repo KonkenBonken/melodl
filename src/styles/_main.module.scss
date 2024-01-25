@@ -1,1 +1,26 @@
-.header {}
+@use 'sass:list';
+
+.header {
+  font-size: 3em;
+}
+
+$colors: #76C043, #55C09A, #0DA8E1, #804E9F, #DA4597, #EE3E23, #F6921E, #000000;
+
+.shares {
+  > div {
+    width: 70vw;
+    height: 20vh;
+    display: flex;
+    > div {
+      height: 100%;
+      border-radius: 1vh;
+
+      @for $i from 1 through 8 {
+        $color: list.nth($colors, $i);
+        &:nth-child(#{$i}) {
+          background-color: $color;
+        }
+      }
+    }
+  }
+}

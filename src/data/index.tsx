@@ -1,3 +1,5 @@
+import scss from '../styles/_main.module.scss';
+
 const raw = [
   ['Where You Are (Sávežan)', 2017718, 6, 5, 5, 7, 7, 10, 10, 8],
   ['Rhythm of My Show', 1241991, 3, 1, 1, 0, 0, 0, 0, 0],
@@ -30,6 +32,16 @@ class Song {
 
   get shares() {
     return this.groups.map(points => points / this.totalPoints);
+  }
+
+  get Shares() {
+    return (() => <div>
+      {this.shares.map((share, i) => (<div key={i}
+        style={{
+          width: (share * 100).toFixed(3) + '%'
+        }}
+      />))}
+    </div>).bind(this);
   }
 }
 
