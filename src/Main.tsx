@@ -6,6 +6,7 @@ import scss from './styles/_main.module.scss';
 import songs, { type Song } from './data';
 
 const { floor, random } = Math;
+const maxGuesses = 6;
 
 export default function Main() {
   const Goal = useMemo(() => songs[floor(random() * songs.length)], []);
@@ -25,7 +26,7 @@ export default function Main() {
           <Guess.Shares />
         </div>
       ))}
-      <div />
+      {Array.from({ length: maxGuesses - guesses.length }, (_, i) => <div key={i} />).reverse()}
       <input placeholder="Guess any 2023 Melodifestivalen song"
         onKeyDown={(e) => {
         if (e.key === 'Enter') {
