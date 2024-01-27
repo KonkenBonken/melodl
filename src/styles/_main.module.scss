@@ -23,6 +23,15 @@ $labels: "3-9", "10-15", "16-29", "30-44", "45-59", "60-74", "75+", "Telefon";
       filter: saturate(1.2);
     }
 
+    &::after {
+      color: #fff;
+      text-shadow: #000 0 0 .2em;
+      font-size: 1.25em;
+      white-space: nowrap;
+      opacity: 0;
+      transition: opacity 0.2s 0.2s ease-out;
+    }
+
     @for $i from 1 through 8 {
       $color: list.nth($colors, $i);
       $label: list.nth($labels, $i);
@@ -34,17 +43,9 @@ $labels: "3-9", "10-15", "16-29", "30-44", "45-59", "60-74", "75+", "Telefon";
           @if $i ==8 {
             content: $label;
           }
-
           @else {
             content: $label " år";
           }
-
-          color: #fff;
-          text-shadow: #000 0 0 .2em;
-          font-size: 1.25em;
-          white-space: nowrap;
-          opacity: 0;
-          transition: opacity 0.2s 0.2s ease-out;
         }
 
         &:hover::after {
