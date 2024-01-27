@@ -66,6 +66,17 @@ $labels: "3-9", "10-15", "16-29", "30-44", "45-59", "60-74", "75+", "Telefon";
   > div {
     height: 20vh;
     @extend .shares;
+
+    &::after {
+      content: attr(data-points) " points";
+      display: block;
+      place-self: center;
+      font-weight: bold;
+      margin-left: 1ch;
+      color: #444;
+      white-space: nowrap;
+      width: 0;
+    }
   }
 }
 

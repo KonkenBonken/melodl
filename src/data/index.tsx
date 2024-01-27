@@ -24,7 +24,7 @@ export class Song {
   }
 
   get Shares() {
-    return (() => <div>
+    return (() => <div data-points={this.totalPoints}>
       {this.shares.map((share, i) => (<div key={i}
         style={{
           width: (share * 100).toFixed(3) + '%'
