@@ -54,7 +54,7 @@ export class Song {
   }
 
   get shares() {
-    return this.groups.map(points => points / Song.maxPoints);
+    return this.groups.map(points => points / (12 * 8));
   }
 
   get Shares() {
