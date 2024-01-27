@@ -25,12 +25,16 @@ export default function Main() {
           <Guess.Shares />
         </div>
       ))}
-      <input onKeyDown={(e) => {
+      <div />
+      <input placeholder="Guess any 2023 Melodifestivalen song"
+        onKeyDown={(e) => {
         if (e.key === 'Enter') {
           const guess = e.currentTarget.value,
             song = songs.find(song => song.name.toLowerCase() === guess.toLowerCase());
-          if (song && !guesses.includes(song))
+          if (song && !guesses.includes(song)) {
             guessActions.push(song);
+            e.currentTarget.value = '';
+          }
         }
       }} />
     </div>

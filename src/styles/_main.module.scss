@@ -105,6 +105,9 @@ $labels: "3-9", "10-15", "16-29", "30-44", "45-59", "60-74", "75+", "Telefon";
     margin-top: 1vh;
     border:none;
     background-color: #eee;
+    font-family: sans-serif;
+    font-weight: bold;
+    padding-inline: 1vh;
 
     &:focus, &:focus-visible {
       outline: none;
