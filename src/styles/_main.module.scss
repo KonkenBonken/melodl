@@ -8,8 +8,6 @@ $colors: #76C043, #55C09A, #0DA8E1, #804E9F, #DA4597, #EE3E23, #F6921E, #000000;
 $labels: "3-9", "10-15", "16-29", "30-44", "45-59", "60-74", "75+", "Telefon";
 
 .shares {
-  width: 70vw;
-  height: 20vh;
   display: flex;
 
   > div {
@@ -62,13 +60,55 @@ $labels: "3-9", "10-15", "16-29", "30-44", "45-59", "60-74", "75+", "Telefon";
 }
 
 .goal {
+  width: 100%;
+
   > div {
+    height: 20vh;
     @extend .shares;
   }
 }
 
 .guesses {
+  width: 100%;
+
   > div {
-    @extend .shares;
+    box-sizing: border-box;
+    margin-top: 1vh;
+    width: 100% ;
+    padding: 1vh;
+    border-radius: .5vh;
+    background-color: #eee;
+
+    > div {
+      height: 10vh;
+      @extend .shares;
+    }
+
+    > h3 {
+      margin-top: 0;
+      margin-bottom: .25em;
+      
+      > i {
+        margin-left: .75ch;
+        font-style: inherit;
+        font-size: .75em;
+        color:#444
+      }
+    }
+  }
+
+  > input {
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 1vh;
+    height: 4vh;
+    margin-top: 1vh;
+    border:none;
+    background-color: #eee;
+
+    &:focus, &:focus-visible {
+      outline: none;
+      background-color: #f3f3f3;
+    }
   }
 }
