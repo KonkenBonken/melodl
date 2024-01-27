@@ -75,25 +75,36 @@ $labels: "3-9", "10-15", "16-29", "30-44", "45-59", "60-74", "75+", "Telefon";
   > div {
     box-sizing: border-box;
     margin-top: 1vh;
-    width: 100% ;
+    width: 100%;
     padding: 1vh;
     border-radius: .5vh;
     background-color: #eee;
 
     > div {
-      height: 10vh;
+      height: 5vh;
       @extend .shares;
+
+      > div {
+        &::after {
+          text-shadow: #000a 0 0 .1em;
+          font-size: 1.25em * .75 !important;
+        }
+
+        &:hover {
+          width: 30% !important;
+        }
+      }
     }
 
     > h3 {
       margin-top: 0;
       margin-bottom: .25em;
-      
+
       > i {
         margin-left: .75ch;
         font-style: inherit;
         font-size: .75em;
-        color:#444
+        color: #444
       }
     }
 
@@ -108,7 +119,7 @@ $labels: "3-9", "10-15", "16-29", "30-44", "45-59", "60-74", "75+", "Telefon";
     border-radius: 1vh;
     height: 4vh;
     margin-top: 1vh;
-    border:none;
+    border: none;
     background-color: #eee;
     font-family: sans-serif;
     font-weight: bold;
