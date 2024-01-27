@@ -34,7 +34,7 @@ const raw = [
   ['Royals', 1060383, 0, 0, 0, 0, 0, 1, 0, 0],
 ] as [string, number, ...number[]][];
 
-class Song {
+export class Song {
   readonly groups: number[];
 
   constructor(
