@@ -35,6 +35,10 @@ const raw = [
 ] as [string, number, ...number[]][];
 
 export class Song {
+  static get maxPoints() {
+    return Math.max(...songs.map(song => song.totalPoints));
+  }
+
   readonly groups: number[];
 
   constructor(
@@ -50,7 +54,7 @@ export class Song {
   }
 
   get shares() {
-    return this.groups.map(points => points / this.totalPoints);
+    return this.groups.map(points => points / Song.maxPoints);
   }
 
   get Shares() {
@@ -64,4 +68,5 @@ export class Song {
   }
 }
 
-export default raw.map(song => new Song(...song));
+const songs = raw.map(song => new Song(...song));
+export default songs;

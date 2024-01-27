@@ -3,12 +3,12 @@ import useArrayState from 'use-array-state'
 
 import scss from './styles/_main.module.scss';
 
-import data, { type Song } from './data';
+import songs, { type Song } from './data';
 
 const { floor, random } = Math;
 
 export default function Main() {
-  const Goal = useMemo(() => data[floor(random() * data.length)], []);
+  const Goal = useMemo(() => songs[floor(random() * songs.length)], []);
   const [guesses, guessActions] = useArrayState<Song>();
 
   return (<main>
@@ -23,7 +23,7 @@ export default function Main() {
       <input onKeyDown={(e) => {
         if (e.key === 'Enter') {
           const guess = e.currentTarget.value,
-            song = data.find(song => song.name.toLowerCase() === guess.toLowerCase());
+            song = songs.find(song => song.name.toLowerCase() === guess.toLowerCase());
           if (song && !guesses.includes(song))
             guessActions.push(song);
         }
