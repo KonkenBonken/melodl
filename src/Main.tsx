@@ -3,7 +3,7 @@ import useArrayState from 'use-array-state';
 
 import scss from './styles/_main.module.scss';
 
-import songs, { type Song } from './data';
+import songs, { Song } from './data';
 
 const { floor, random } = Math;
 const maxGuesses = 6;
@@ -13,6 +13,7 @@ export default function Main() {
   const [guesses, guessActions] = useArrayState<Song>();
 
   return (<main>
+    <Song.Datalist />
     <h1 className={scss.header}>
       Melodl 2023
     </h1>
@@ -27,7 +28,9 @@ export default function Main() {
         </div>
       ))}
       {Array.from({ length: maxGuesses - guesses.length }, (_, i) => <div key={i} />).reverse()}
-      <input placeholder="Guess any 2023 Melodifestivalen song"
+      <input
+        placeholder="Guess any 2023 Melodifestivalen song"
+        list="songs"
         onKeyDown={(e) => {
         if (e.key === 'Enter') {
           const guess = e.currentTarget.value,

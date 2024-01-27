@@ -1,9 +1,13 @@
 import raw from './dataset';
+import Datalist from './Datalist';
+
 
 export class Song {
   static get maxPoints() {
     return Math.max(...songs.map(song => song.totalPoints));
   }
+
+  static Datalist = Datalist;
 
   readonly groups: number[];
 
