@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.95ba9598.css",
-    "main.js": "/static/js/main.e4373df3.js",
-    "index.html": "/index.html",
-    "main.95ba9598.css.map": "/static/css/main.95ba9598.css.map",
-    "main.e4373df3.js.map": "/static/js/main.e4373df3.js.map"
+    "main.css": "/melodl/static/css/main.95ba9598.css",
+    "main.js": "/melodl/static/js/main.e4373df3.js",
+    "index.html": "/melodl/index.html",
+    "main.95ba9598.css.map": "/melodl/static/css/main.95ba9598.css.map",
+    "main.e4373df3.js.map": "/melodl/static/js/main.e4373df3.js.map"
   },
   "entrypoints": [
     "static/css/main.95ba9598.css",
