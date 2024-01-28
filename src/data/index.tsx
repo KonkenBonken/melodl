@@ -47,4 +47,11 @@ export default class Song {
       />))}
     </div>).bind(this);
   }
+
+  get Guess() {
+    return (() => <div>
+      <h3>{this.name} <i>{this.totalPoints} points</i></h3>
+      {this.Shares()}
+    </div>).bind(this);
+  }
 }
