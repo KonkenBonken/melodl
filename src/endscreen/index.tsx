@@ -16,11 +16,17 @@ export default function Endscreen({ win, guesses, Goal, maxGuesses }: { win: boo
       if (e.key === 'Escape')
         e.preventDefault();
     }}
-  >{win && <>
+  >{win ? <>
     <h2>Congratulations!</h2>
     <h3>Guess the next song in <Countdown date={next} daysInHours /></h3>
     {guesses.map(Guess => <Guess.Guess key={Guess.name} />)}
     {Array.from({ length: maxGuesses - guesses.length }, (_, i) => <div key={i} />).reverse()}
-  </>}
+    </> : <>
+      <h2>Better luck next time!</h2>
+      <h3>The answer was:</h3>
+      <Goal.Guess />
+      <h3>Guess the next song in <Countdown date={next} daysInHours /></h3>
+      {guesses.map(Guess => <Guess.Guess key={Guess.name} />)}
+    </>}
   </dialog>;
 }
