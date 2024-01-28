@@ -5,21 +5,21 @@ type rawType = typeof raw;
 
 export default class Song {
   static get rawSongs() {
-    return raw;
+    return Object.entries(raw).flatMap(([year, rawSongs]) => rawSongs.map(song => [+year, song] as const));
   }
 
   static get maxPoints() {
     return Math.max(...Song.songs.map(song => song.totalPoints));
   }
 
-  static songs = Song.rawSongs.map(song => new Song(song));
+  static songs = Song.rawSongs.map(([year, song]) => new Song(year, song));
   static Datalist = Datalist;
 
   readonly name: string;
   readonly totalVotes: number;
   readonly groups: number[];
 
-  constructor([name, totalVotes, ...groups]: (typeof raw)[number]) {
+  constructor(readonly year: number, [name, totalVotes, ...groups]: rawType[keyof rawType][number]) {
     this.name = name;
     this.totalVotes = totalVotes;
     this.groups = groups;
