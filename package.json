@@ -9,6 +9,7 @@
     "@types/react-dom": "^18.2.18",
     "css-reset-and-normalize": "^2.3.6",
     "eslint": "^8.56.0",
+    "fastest-levenshtein": "^1.0.16",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
