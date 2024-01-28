@@ -1,11 +1,18 @@
 import raw from './dataset';
 import Datalist from './Datalist';
 
-export class Song {
-  static get maxPoints() {
-    return Math.max(...songs.map(song => song.totalPoints));
+type rawType = typeof raw;
+
+export default class Song {
+  static get rawSongs() {
+    return raw;
   }
 
+  static get maxPoints() {
+    return Math.max(...Song.songs.map(song => song.totalPoints));
+  }
+
+  static songs = Song.rawSongs.map(song => new Song(song));
   static Datalist = Datalist;
 
   readonly name: string;
@@ -36,6 +43,3 @@ export class Song {
     </div>).bind(this);
   }
 }
-
-const songs = raw.map(song => new Song(song));
-export default songs;
