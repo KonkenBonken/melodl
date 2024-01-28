@@ -1,4 +1,38 @@
 export default {
+  2021: [
+    ['One Touch', 967331, 10, 8, 4, 2, 1, 1, 2, 1],
+    ['Pretender', 1159154, 2, 2, 8, 12, 6, 4, 4, 10],
+    ['Horizon', 1065794, 4, 4, 2, 4, 4, 8, 8, 4],
+    ['The Missing Piece', 1239146, 12, 12, 10, 8, 8, 6, 6, 6],
+    ['Fingerprints', 825414, 1, 1, 1, 1, 2, 2, 1, 2],
+
+    ['Rich', 751337, 4, 1, 1, 1, 1, 1, 1, 1],
+    ['90-talet', 961160, 8, 2, 2, 8, 4, 2, 2, 2],
+    ['The Silence', 1028299, 1, 8, 4, 4, 8, 8, 6, 8],
+    ['Rena rama ding dong', 997947, 2, 6, 6, 2, 2, 10, 12, 12],
+    ['Tears Run Dry', 1049434, 6, 4, 10, 6, 6, 4, 4, 4],
+
+    ['Om allting skiter sig', 987458, 6, 4, 8, 4, 2, 2, 2, 6],
+    ['Contagious', 763045, 2, 2, 2, 2, 4, 1, 1, 4],
+    ['Den du är', 613779, 1, 1, 1, 1, 1, 6, 6, 1],
+
+    ['Good Life', 868050, 6, 4, 4, 4, 6, 6, 4, 6],
+    ['Allting är precis likadant', 783763, 2, 6, 6, 2, 2, 1, 1, 1],
+    ['All Inclusive', 609909, 4, 1, 1, 1, 1, 2, 2, 2],
+
+    ['Voices', 1309741, 12, 12, 12, 12, 12, 12, 12, 12],
+    ['In the Middle', 1341566, 3, 10, 10, 10, 7, 6, 6, 4],
+    ['Behöver inte dig idag', 1066340, 1, 1, 4, 6, 10, 10, 10, 10],
+    ['Every Minute', 1646198, 4, 5, 7, 7, 8, 5, 5, 8],
+    ['Little Tot', 998030, 6, 7, 8, 8, 6, 4, 4, 5],
+    ['Beat of Broken Hearts', 1016557, 8, 8, 5, 5, 3, 2, 3, 2],
+    ['Dandi dansa', 2964269, 10, 6, 6, 4, 4, 1, 1, 3],
+    ['Still Young', 1071188, 0, 0, 0, 1, 5, 8, 8, 6],
+    ['Tänker inte alls gå hem', 1455605, 0, 0, 0, 0, 1, 7, 7, 7],
+    ['Baila Baila', 1471324, 5, 2, 1, 3, 2, 3, 2, 1],
+    ['New Religion', 1488599, 7, 4, 3, 2, 0, 0, 0, 0],
+    ['The Missing Piece', 923022, 2, 3, 2, 0, 0, 0, 0, 0],
+  ],
   2022: [
     // Bananas
     // Let There Be Angels
@@ -69,4 +103,4 @@ export default {
     ['Mer av dig', 1915643, 12, 3, 4, 6, 2, 2, 3, 4],
     ['Royals', 1060383, 0, 0, 0, 0, 0, 1, 0, 0],
   ]
-} satisfies Record<number, [string, ...number[]][]>;
+} satisfies Record<number, [string, number, number, number, number, number, number, number, number, number][]>;
