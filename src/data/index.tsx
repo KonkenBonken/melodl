@@ -1,7 +1,6 @@
 import raw from './dataset';
 import Datalist from './Datalist';
 
-
 export class Song {
   static get maxPoints() {
     return Math.max(...songs.map(song => song.totalPoints));
@@ -9,13 +8,13 @@ export class Song {
 
   static Datalist = Datalist;
 
+  readonly name: string;
+  readonly totalVotes: number;
   readonly groups: number[];
 
-  constructor(
-    readonly name: string,
-    readonly totalVotes: number,
-    ...groups: number[]
-  ) {
+  constructor([name, totalVotes, ...groups]: (typeof raw)[number]) {
+    this.name = name;
+    this.totalVotes = totalVotes;
     this.groups = groups;
   }
 
@@ -38,5 +37,5 @@ export class Song {
   }
 }
 
-const songs = raw.map(song => new Song(...song));
+const songs = raw.map(song => new Song(song));
 export default songs;

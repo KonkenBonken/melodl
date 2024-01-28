@@ -32,4 +32,4 @@ export default [
   ['Tattoo', 3783148, 1, 12, 12, 12, 12, 12, 12, 12],
   ['Mer av dig', 1915643, 12, 3, 4, 6, 2, 2, 3, 4],
   ['Royals', 1060383, 0, 0, 0, 0, 0, 1, 0, 0],
-] as [string, number, ...number[]][];
+] satisfies [string, ...number[]][];
