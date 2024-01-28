@@ -31,7 +31,7 @@ export default function Main() {
       {Array.from({ length: maxGuesses - guesses.length }, (_, i) => <div key={i} />).reverse()}
       <input
         placeholder="Guess any 2023 Melodifestivalen song"
-        list="songs"
+        list="songs" autoFocus
         value={input}
         onKeyDown={e => {
           if (e.key === 'Enter') {
