@@ -39,7 +39,7 @@ export default function Main() {
               song = songs.find(song => song.name.toLowerCase() === guess.toLowerCase());
             if (song && !guesses.includes(song)) {
               guessActions.push(song);
-              e.currentTarget.value = '';
+              setInput('');
             }
           }
         }}
