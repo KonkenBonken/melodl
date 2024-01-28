@@ -1,0 +1,53 @@
+.endscreen {
+  border: none;
+  border-radius: 1vh;
+  box-shadow: 0 0 4vh #0006;
+  display: grid;
+  place-items: center;
+  gap: 1vh;
+  padding: 3vh;
+  width: 50vw;
+
+  &:focus-visible {
+    outline: none;
+  }
+
+  > * {
+    margin: 0;
+  }
+
+  > div {
+    height: 7vh;
+    width: 100%;
+    box-sizing: border-box;
+    padding: .5vh;
+    border-radius: 0.5vh;
+    background-color: #eee;
+
+    > div {
+      height: 3vh;
+
+      > div {
+        pointer-events: none;
+      }
+    }
+
+    > h3 {
+      margin-top: 0;
+      margin-bottom: 0.25em;
+      font-size: 1.07em;
+
+      > i {
+        margin-left: 0.75ch;
+        font-style: inherit;
+        font-size: 0.75em;
+        color: #444;
+      }
+    }
+  }
+
+  &::backdrop {
+    background-color: #000b;
+    backdrop-filter: blur(0.33vh);
+  }
+}
