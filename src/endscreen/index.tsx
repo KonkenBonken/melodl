@@ -12,6 +12,10 @@ export default function Endscreen({ win, guesses, Goal, maxGuesses }: { win: boo
   return <dialog
     className={scss.endscreen}
     ref={el => el?.showModal()}
+    onKeyDownCapture={e => {
+      if (e.key === 'Escape')
+        e.preventDefault();
+    }}
   >{win && <>
     <h2>Congratulations!</h2>
     <h3>Guess the next song in <Countdown date={next} daysInHours /></h3>
