@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/melodl/static/css/main.ad2ed6c4.css",
-    "main.js": "/melodl/static/js/main.b722736a.js",
+    "main.css": "/melodl/static/css/main.b4a5929c.css",
+    "main.js": "/melodl/static/js/main.4df07751.js",
     "index.html": "/melodl/index.html",
-    "main.ad2ed6c4.css.map": "/melodl/static/css/main.ad2ed6c4.css.map",
-    "main.b722736a.js.map": "/melodl/static/js/main.b722736a.js.map"
+    "main.b4a5929c.css.map": "/melodl/static/css/main.b4a5929c.css.map",
+    "main.4df07751.js.map": "/melodl/static/js/main.4df07751.js.map"
   },
   "entrypoints": [
-    "static/css/main.ad2ed6c4.css",
-    "static/js/main.b722736a.js"
+    "static/css/main.b4a5929c.css",
+    "static/js/main.4df07751.js"
   ]
 }

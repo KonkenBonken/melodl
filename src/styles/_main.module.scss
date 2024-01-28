@@ -1,63 +1,5 @@
-@use 'sass:list';
-
 .header {
   font-size: 3em;
-}
-
-$colors: #76C043, #55C09A, #0DA8E1, #804E9F, #DA4597, #EE3E23, #F6921E, #000000;
-$labels: "3-9", "10-15", "16-29", "30-44", "45-59", "60-74", "75+", "Telefon";
-
-.shares {
-  display: flex;
-
-  > div {
-    height: 100%;
-    border-radius: 1vh;
-    display: grid;
-    place-items: center;
-    transition: 0.4s .1s cubic-bezier(0.2, 0, 0.4, 1);
-    transition-property: width, filter;
-
-    &:hover {
-      width: 12.5% !important;
-      filter: saturate(1.2);
-    }
-
-    &::after {
-      color: #fff;
-      text-shadow: #000 0 0 .2em;
-      font-size: 1.25em;
-      white-space: nowrap;
-      opacity: 0;
-      transition: opacity 0.2s 0.2s ease-out;
-    }
-
-    @for $i from 1 through 8 {
-      $color: list.nth($colors, $i);
-      $label: list.nth($labels, $i);
-
-      &:nth-child(#{$i}) {
-        background-color: $color;
-
-        &::after {
-          @if $i ==8 {
-            content: $label;
-          }
-          @else {
-            content: $label " år";
-          }
-        }
-
-        &:hover::after {
-          opacity: 1;
-        }
-      }
-    }
-  }
-
-  &:has(:hover) > div:not(:hover) {
-    filter: saturate(.8) brightness(.8);
-  }
 }
 
 .goal {
@@ -65,7 +7,6 @@ $labels: "3-9", "10-15", "16-29", "30-44", "45-59", "60-74", "75+", "Telefon";
 
   > div {
     height: 20vh;
-    @extend .shares;
 
     &::after {
       content: attr(data-points) " points";
@@ -93,7 +34,6 @@ $labels: "3-9", "10-15", "16-29", "30-44", "45-59", "60-74", "75+", "Telefon";
 
     > div {
       height: 5vh;
-      @extend .shares;
 
       > div {
         &::after {

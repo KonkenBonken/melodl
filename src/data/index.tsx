@@ -1,6 +1,8 @@
 import raw from './dataset';
 import Datalist from './Datalist';
 
+import scss from '../styles/_song.module.scss';
+
 type rawType = typeof raw;
 
 export default class Song {
@@ -34,12 +36,22 @@ export default class Song {
   }
 
   get Shares() {
-    return (() => <div data-points={this.totalPoints}>
+    return (() => <div
+      className={scss.shares}
+      data-points={this.totalPoints}
+    >
       {this.shares.map((share, i) => (<div key={i}
         style={{
           width: (share * 100).toFixed(3) + '%'
         }}
       />))}
+    </div>).bind(this);
+  }
+
+  get Guess() {
+    return (() => <div>
+      <h3>{this.name} <i>{this.totalPoints} points</i></h3>
+      {this.Shares()}
     </div>).bind(this);
   }
 }
