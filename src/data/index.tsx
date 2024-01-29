@@ -38,7 +38,7 @@ export default class Song {
   get Shares() {
     return (() => <div
       className={scss.shares}
-      data-points={this.totalPoints}
+      data-votes={this.totalVotes}
     >
       {this.shares.map((share, i) => (<div key={i}
         style={{
@@ -50,7 +50,7 @@ export default class Song {
 
   get Guess() {
     return (() => <div>
-      <h3>{this.name} <i>{this.totalPoints} points</i></h3>
+      <h3>{this.name} <i>{this.totalVotes} votes</i></h3>
       {this.Shares()}
     </div>).bind(this);
   }
