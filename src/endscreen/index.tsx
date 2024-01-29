@@ -19,14 +19,14 @@ export default function Endscreen({ win, guesses, Goal, maxGuesses }: { win: boo
   >{win ? <>
     <h2>Congratulations!</h2>
     <h3>Guess the next song in <Countdown date={next} daysInHours /></h3>
-    {guesses.map(Guess => <Guess.Guess key={Guess.name} />)}
+    {guesses.map(Guess => <Guess.Guess goal={Goal} key={Guess.name} />)}
     {Array.from({ length: maxGuesses - guesses.length }, (_, i) => <div key={i} />).reverse()}
     </> : <>
       <h2>Better luck next time!</h2>
       <h3>The answer was:</h3>
-      <Goal.Guess />
+      <Goal.Guess goal={Goal} />
       <h3>Guess the next song in <Countdown date={next} daysInHours /></h3>
-      {guesses.map(Guess => <Guess.Guess key={Guess.name} />)}
+      {guesses.map(Guess => <Guess.Guess goal={Goal} key={Guess.name} />)}
     </>}
   </dialog>;
 }

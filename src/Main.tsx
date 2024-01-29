@@ -27,7 +27,7 @@ export default function Main() {
       <Goal.Shares />
     </div>
     <div className={scss.guesses}>
-      {guesses.map(Guess => <Guess.Guess key={Guess.name} />)}
+      {guesses.map(Guess => <Guess.Guess goal={Goal} key={Guess.name} />)}
       {Array.from({ length: maxGuesses - guesses.length }, (_, i) => <div key={i} />).reverse()}
       <input
         placeholder="Guess any 2023 Melodifestivalen song"

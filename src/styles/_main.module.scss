@@ -31,9 +31,11 @@
     padding: 1vh;
     border-radius: .5vh;
     background-color: #eee;
+    position: relative;
 
     > div {
       height: 5vh;
+      width: calc(100% - 5vh);
 
       > div {
         &::after {
