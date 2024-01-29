@@ -8,7 +8,7 @@ type rawType = typeof raw;
 
 export default class Song {
   static get rawSongs() {
-    return Object.entries(raw).flatMap(([year, rawSongs]) => rawSongs.map(song => [+year, song] as const));
+    return Object.entries(raw).flatMap(([year, rawSongs]) => rawSongs.flat().map(song => [+year, song] as const));
   }
 
   static get maxPoints() {
@@ -22,7 +22,7 @@ export default class Song {
   readonly totalVotes: number;
   readonly groups: number[];
 
-  constructor(readonly year: number, [name, totalVotes, ...groups]: rawType[keyof rawType][number]) {
+  constructor(readonly year: number, [name, totalVotes, ...groups]: rawType[keyof rawType][number][number]) {
     this.name = name;
     this.totalVotes = totalVotes;
     this.groups = groups;
