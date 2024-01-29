@@ -61,11 +61,15 @@ export default class Song {
 
   get YearHint() {
     return ((goal: Song) => {
-      switch (abs(goal.year - this.year)) {
-        case 0: return <div className={scss.green}>{this.year}</div>;
-        case 1: return <div className={scss.yellow}>{this.year}</div>;
-        default: return <div className={scss.gray}>{this.year}</div>;
-      }
+      const diff = abs(goal.year - this.year);
+      let className = scss.gray;
+
+      if (diff === 0)
+        className = scss.green;
+      else if (diff === 1)
+        className = scss.yellow;
+
+      return <div className={className}>{this.year}</div>;
     }).bind(this);
   }
 }
