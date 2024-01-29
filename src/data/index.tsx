@@ -3,6 +3,7 @@ import Datalist from './Datalist';
 
 import scss from '../styles/_song.module.scss';
 
+const { abs } = Math;
 type rawType = typeof raw;
 
 export default class Song {
@@ -49,9 +50,26 @@ export default class Song {
   }
 
   get Guess() {
-    return (() => <div>
+    return (({ goal }: { goal: Song }) => <div>
       <h3>{this.name} <i>{this.totalPoints} points</i></h3>
+      <section className={scss.hints}>
+        {this.YearHint(goal)}
+      </section>
       {this.Shares()}
     </div>).bind(this);
+  }
+
+  get YearHint() {
+    return ((goal: Song) => {
+      const diff = abs(goal.year - this.year);
+      let className = scss.gray;
+
+      if (diff === 0)
+        className = scss.green;
+      else if (diff === 1)
+        className = scss.yellow;
+
+      return <div className={className}>{this.year}</div>;
+    }).bind(this);
   }
 }

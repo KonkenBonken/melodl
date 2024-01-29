@@ -23,9 +23,11 @@
     padding: .5vh;
     border-radius: 0.5vh;
     background-color: #eee;
+    position: relative;
 
     > div {
       height: 3vh;
+      width: calc(100% - 5vh);
 
       > div {
         pointer-events: none;

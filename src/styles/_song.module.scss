@@ -55,3 +55,31 @@ $labels: "3-9", "10-15", "16-29", "30-44", "45-59", "60-74", "75+", "Telefon";
     filter: saturate(.8) brightness(.8);
   }
 }
+.hints {
+  position: absolute;
+  display: flex;
+  top: 1vh;
+  right: 1vh;
+
+  > div {
+    height: 4vh;
+    width: 4vh;
+    border-radius: 1vh;
+    display: grid;
+    place-content: center;
+    font-weight: bold;
+    font-size: .75em;
+
+    &.green {
+      background-color: #0e2;
+    }
+
+    &.yellow {
+      background-color: #ff0;
+    }
+
+    &.gray {
+      background-color: #aaa;
+    }
+  }
+}
