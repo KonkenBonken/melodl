@@ -5,6 +5,8 @@ import scss from '../styles/_song.module.scss';
 
 type rawType = typeof raw;
 
+const { round } = Math;
+
 export default class Song {
   static get rawSongs() {
     return Object.entries(raw).flatMap(([year, rawSongs]) => rawSongs.map(song => [+year, song] as const));
@@ -31,6 +33,14 @@ export default class Song {
     return this.groups.reduce((a, b) => a + b);
   }
 
+  get displayVotes() {
+    if (this.totalVotes < 1e6)
+      return `${round(this.totalVotes / 1e4) * 10} 000 votes`;
+
+    const hundred = round(this.totalVotes / 1e5).toString();
+    return `${hundred[0]} ${hundred[1]}00 000 votes`;
+  }
+
   get shares() {
     return this.groups.map(points => points / (12 * 8));
   }
@@ -38,7 +48,7 @@ export default class Song {
   get Shares() {
     return (() => <div
       className={scss.shares}
-      data-votes={this.totalVotes}
+      data-votes={this.displayVotes}
     >
       {this.shares.map((share, i) => (<div key={i}
         style={{
@@ -50,7 +60,7 @@ export default class Song {
 
   get Guess() {
     return (() => <div>
-      <h3>{this.name} <i>{this.totalVotes} votes</i></h3>
+      <h3>{this.name} <i>{this.displayVotes}</i></h3>
       {this.Shares()}
     </div>).bind(this);
   }

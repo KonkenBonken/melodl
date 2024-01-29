@@ -9,7 +9,7 @@
     height: 20vh;
 
     &::after {
-      content: attr(data-votes) " votes";
+      content: attr(data-votes);
       display: block;
       place-self: center;
       font-weight: bold;
