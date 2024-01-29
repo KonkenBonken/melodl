@@ -16,7 +16,7 @@ export default function Main() {
   return (<main>
     <Song.Datalist input={input} />
     <h1 className={scss.header}>
-      Melodl 2023
+      Melodl
     </h1>
     <div className={scss.goal}>
       <Goal.Shares />
@@ -30,7 +30,7 @@ export default function Main() {
       ))}
       {Array.from({ length: maxGuesses - guesses.length }, (_, i) => <div key={i} />).reverse()}
       <input
-        placeholder="Guess any 2023 Melodifestivalen song"
+        placeholder="Guess any 2019-2023 Melodifestivalen song"
         list="songs"
         value={input}
         onKeyDown={e => {
