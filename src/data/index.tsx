@@ -61,6 +61,7 @@ export default class Song {
       <h3>{this.name} <i>{this.totalPoints} points</i></h3>
       <section className={scss.hints}>
         {this.YearHint(goal)}
+        {this.LostHint(goal)}
       </section>
       {this.Shares()}
     </div>).bind(this);
@@ -73,6 +74,15 @@ export default class Song {
         case 1: return <div className={scss.yellow}>{this.year}</div>;
         default: return <div className={scss.gray}>{this.year}</div>;
       }
+    }).bind(this);
+  }
+
+  get LostHint() {
+    return ((goal: Song) => {
+      if (goal.loseEpisode === this.loseEpisode)
+        return <div className={scss.green}>{this.loseEpisode}</div>;
+      else
+        return <div className={scss.gray}>{this.loseEpisode}</div>;
     }).bind(this);
   }
 }
