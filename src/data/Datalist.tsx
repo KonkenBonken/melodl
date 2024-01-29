@@ -1,4 +1,3 @@
-import React from 'react';
 import { distance } from 'fastest-levenshtein';
 
 import Song from './';

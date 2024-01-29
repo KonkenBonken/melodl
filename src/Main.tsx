@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import useArrayState from 'use-array-state';
 
 import scss from './styles/_main.module.scss';
