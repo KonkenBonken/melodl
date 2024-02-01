@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import useLocalStorage from 'use-local-storage';
 
 import Heart from './heart';
 import Telephone from './telephone';
@@ -6,7 +6,7 @@ import Telephone from './telephone';
 import scss from '../styles/_infoscreen.module.scss';
 
 export default function Infoscreen({ maxGuesses }: { maxGuesses: number }) {
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useLocalStorage('show-info', true);
 
   if (!show)
     return null;
