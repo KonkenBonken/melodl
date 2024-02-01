@@ -6,7 +6,7 @@ import scss from '../styles/_infoscreen.module.scss';
 
 import HelpButton from './HelpButton';
 
-export default function Infoscreen({ maxGuesses }: { maxGuesses: number }) {
+export default function Infoscreen() {
   const [show, setShow] = useLocalStorage('show-info', true);
 
   if (!show)
@@ -28,7 +28,7 @@ export default function Infoscreen({ maxGuesses }: { maxGuesses: number }) {
     </div>
 
     <ul>
-      <li>Guess the song in {maxGuesses} guesses</li>
+      <li>Guess the song in six guesses</li>
       <li>Each guess must be a Melodifestivalen song that competed 2019 - 2023</li>
       <li>After guessing you'll get to see
         <ul>

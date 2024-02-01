@@ -8,8 +8,6 @@ import Song from './data';
 import Endscreen from './endscreen';
 import Infoscreen from './infoscreen';
 
-const maxGuesses = 6;
-
 export default function Main() {
   const day = Math.floor(Date.now() / 864e5),
     Goal = useMemo(() => hasch(day, { choose: Song.songs }), [day]);
@@ -18,7 +16,7 @@ export default function Main() {
   const [input, setInput] = useState('');
 
   const win = guesses.at(-1) === Goal,
-    lost = !win && guesses.length === maxGuesses,
+    lost = !win && guesses.length === 6,
     ended = win || lost;
 
   return (<main>
@@ -26,13 +24,13 @@ export default function Main() {
     <h1 className={scss.header}>
       Melodl
     </h1>
-    <Infoscreen maxGuesses={maxGuesses} />
+    <Infoscreen />
     <div className={scss.goal}>
       <Goal.Shares />
     </div>
     <div className={scss.guesses}>
       {guesses.map(Guess => <Guess.Guess goal={Goal} key={Guess.name} />)}
-      {Array.from({ length: maxGuesses - guesses.length }, (_, i) => <div key={i} />).reverse()}
+      {Array.from({ length: 6 - guesses.length }, (_, i) => <div key={i} />).reverse()}
       <input
         placeholder="Guess any 2019-2023 Melodifestivalen song"
         list="songs" autoFocus
@@ -53,6 +51,6 @@ export default function Main() {
         }}
       />
     </div>
-    {ended && <Endscreen win={win} guesses={guesses} Goal={Goal} maxGuesses={maxGuesses} />}
+    {ended && <Endscreen win={win} guesses={guesses} Goal={Goal} />}
   </main>);
 }
