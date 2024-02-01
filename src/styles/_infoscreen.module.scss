@@ -3,7 +3,7 @@
   border-radius: 1vh;
   box-shadow: 0 0 4vh #0006;
   gap: 1vh;
-  padding: 3vh;
+  padding: 3vh 3vh 1.5vh;
   width: 50vw;
 
   &:focus-visible {
@@ -47,12 +47,22 @@
   }
 
   > ul {
-    padding-inline-start: 1.5em;
     font-weight: normal;
+
+    &, ul {
+      padding-inline-start: 1.5em;
+    }
 
     &:last-of-type {
       font-size: .75em;
+      color: #444;
       text-wrap: balance;
+      margin-top: 2em;
+      padding-left: 0;
+
+      > li::marker {
+        content: '*';
+      }
     }
   }
 

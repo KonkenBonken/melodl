@@ -36,10 +36,10 @@ export default function Infoscreen({ maxGuesses }: { maxGuesses: number }) {
       </li>
     </ul>
     <ul>
-      <li>All voting data refers to the heat the song got voted out in, or the grand final</li>
+      <li>All voting data refers to the heat the song got voted out in, or the grand final.</li>
       <li>Due to technical difficulties during Heat 1 2022,
         the songs <i>Bananas</i>, <i>Let There Be Angels</i>, and <i>Moving Like That </i>
-        are not included in Melodl</li>
+        are not included in Melodl.</li>
     </ul>
   </dialog>;
 }
