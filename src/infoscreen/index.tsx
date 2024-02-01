@@ -1,6 +1,8 @@
 import { useState } from 'react';
 
 import Heart from './heart';
+import Telephone from './telephone';
+
 import scss from '../styles/_infoscreen.module.scss';
 
 export default function Infoscreen({ maxGuesses }: { maxGuesses: number }) {
@@ -50,13 +52,13 @@ const ageGroups = [
   ['DA4597', '45-59 år'],
   ['EE3E23', '60-74 år'],
   ['F6921E', '75+ år'],
-  ['000000', 'Telefon'],
+  ['', 'Telefon'],
 ] satisfies [string, string][];
 
 function Age(_: unknown, i: number) {
   const [color, group] = ageGroups[i];
   return <div className={scss.group} key={i} >
-    <Heart color={color} />
+    {group === 'Telefon' ? <Telephone /> : <Heart color={color} />}
     <h4>{group}</h4>
   </div>;
 }
