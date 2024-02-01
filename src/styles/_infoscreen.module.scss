@@ -1,0 +1,23 @@
+.infoscreen {
+  border: none;
+  border-radius: 1vh;
+  box-shadow: 0 0 4vh #0006;
+  display: grid;
+  place-items: center;
+  gap: 1vh;
+  padding: 3vh;
+  width: 50vw;
+
+  &:focus-visible {
+    outline: none;
+  }
+
+  > * {
+    margin: 0;
+  }
+
+  &::backdrop {
+    background-color: #000b;
+    backdrop-filter: blur(0.33vh);
+  }
+}
