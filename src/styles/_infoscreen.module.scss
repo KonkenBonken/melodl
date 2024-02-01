@@ -2,14 +2,30 @@
   border: none;
   border-radius: 1vh;
   box-shadow: 0 0 4vh #0006;
-  display: grid;
-  place-items: center;
   gap: 1vh;
   padding: 3vh;
   width: 50vw;
 
   &:focus-visible {
     outline: none;
+  }
+
+  > h2 {
+    text-align: center;
+  }
+
+  > h3 {
+    text-align: center;
+    margin-bottom: 1em;
+  }
+
+  > h4 {
+    font-weight: normal;
+  }
+
+  > h2, > h3, > h4 {
+    margin: 1em 0 0;
+    text-wrap: balance;
   }
 
   > .groups {
@@ -29,6 +45,15 @@
       }
     }
   }
+
+  > ul {
+    padding-inline-start: 1.5em;
+    font-weight: normal;
+
+    &:last-of-type {
+      font-size: .75em;
+      text-wrap: balance;
+    }
   }
 
   &::backdrop {

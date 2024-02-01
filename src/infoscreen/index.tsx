@@ -3,7 +3,7 @@ import { useState } from 'react';
 import Heart from './heart';
 import scss from '../styles/_infoscreen.module.scss';
 
-export default function Infoscreen() {
+export default function Infoscreen({ maxGuesses }: { maxGuesses: number }) {
   const [showInfo, setShowInfo] = useState(true);
 
   if (!showInfo)
@@ -21,6 +21,24 @@ export default function Infoscreen() {
     <div className={scss.groups} >
       {Array.from({ length: 8 }, Age)}
     </div>
+
+    <ul>
+      <li>Guess the song in {maxGuesses} guesses</li>
+      <li>Each guess must be a Melodifestivalen song that competed 2019 - 2023</li>
+      <li>After guessing you'll get to see
+        <ul>
+          <li>how the age groups voted on your guessed song</li>
+          <li>if you've guessed a song from the correct year, showing in green.
+            If your guess is 1 year away, you'll get a yellow color instead</li>
+        </ul>
+      </li>
+    </ul>
+    <ul>
+      <li>All voting data refers to the heat the song got voted out in, or the grand final</li>
+      <li>Due to technical difficulties during Heat 1 2022,
+        the songs <i>Bananas</i>, <i>Let There Be Angels</i>, and <i>Moving Like That </i>
+        are not included in Melodl</li>
+    </ul>
   </dialog>;
 }
 

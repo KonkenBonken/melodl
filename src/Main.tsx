@@ -24,7 +24,7 @@ export default function Main() {
     <h1 className={scss.header}>
       Melodl
     </h1>
-    <Infoscreen />
+    <Infoscreen maxGuesses={maxGuesses} />
     <div className={scss.goal}>
       <Goal.Shares />
     </div>
