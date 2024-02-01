@@ -1,8 +1,8 @@
 import { useMemo, useState } from 'react';
-import useArrayState from 'use-array-state';
 
 import scss from './styles/_main.module.scss';
 
+import useDailySongStorage from './utils/useDailyStorage';
 import Song from './data';
 import Endscreen from './endscreen';
 import Infoscreen from './infoscreen';
@@ -12,7 +12,7 @@ const maxGuesses = 6;
 
 export default function Main() {
   const Goal = useMemo(() => Song.songs[floor(random() * Song.songs.length)], []);
-  const [guesses, guessActions] = useArrayState<Song>();
+  const [guesses, setGuesses] = useDailySongStorage('guesses', []);
   const [input, setInput] = useState('');
 
   const win = guesses.at(-1) === Goal,
@@ -40,7 +40,7 @@ export default function Main() {
             const guess = e.currentTarget.value,
               song = Song.songs.find(song => song.name.toLowerCase() === guess.toLowerCase());
             if (song && !guesses.includes(song)) {
-              guessActions.push(song);
+              setGuesses([...guesses, song]);
               setInput('');
             }
           }
