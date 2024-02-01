@@ -1,0 +1,116 @@
+.infoscreen {
+  border: none;
+  border-radius: 1vh;
+  box-shadow: 0 0 4vh #0006;
+  gap: 1vh;
+  padding: 3vh 3vh 1.5vh;
+  width: 50vw;
+
+  &:focus-visible, > *:focus-visible {
+    outline: none;
+  }
+
+  .close {
+    position: absolute;
+    top: 1.5vh;
+    right: 2vh;
+    width: 4vh;
+    height: 4vh;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    &::before, &::after {
+      content: '';
+      display: block;
+      margin: auto;
+      width: 3vh;
+      height: .3vh;
+      border-radius: .15vh;
+      background-color: #aaa;
+      position: absolute;
+      rotate: 45deg;
+    }
+
+    &::after {
+      rotate: -45deg;
+    }
+  }
+
+  > h2 {
+    text-align: center;
+  }
+
+  > h3 {
+    text-align: center;
+    margin-bottom: 1em;
+  }
+
+  > h4 {
+    font-weight: normal;
+  }
+
+  > h2, > h3, > h4 {
+    margin: 1em 0 0;
+    text-wrap: balance;
+  }
+
+  > .groups {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 2%;
+
+    > .group {
+      display: grid;
+      place-items: center;
+      flex: 1;
+
+      > h4 {
+        margin: 0;
+        font-size: .85em;
+      }
+    }
+  }
+
+  > ul {
+    font-weight: normal;
+
+    &, ul {
+      padding-inline-start: 1.5em;
+    }
+
+    &:last-of-type {
+      font-size: .75em;
+      color: #444;
+      text-wrap: balance;
+      margin-top: 2em;
+      padding-left: 0;
+
+      > li::marker {
+        content: '*';
+      }
+    }
+  }
+
+  &::backdrop {
+    background-color: #000b;
+    backdrop-filter: blur(0.33vh);
+  }
+}
+
+.help {
+  position: fixed;
+  top: 1vh;
+  right: 3vh;
+  width: 4vh;
+  height: 4vh;
+  border-radius: 2vh;
+  background: none;
+  border: .5vh solid #bbb;
+  color: #bbb;
+  font-weight: 900;
+  font-size: 1.5em;
+  line-height: 1;
+  cursor: pointer;
+}

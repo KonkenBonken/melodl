@@ -5,6 +5,7 @@ import scss from './styles/_main.module.scss';
 
 import Song from './data';
 import Endscreen from './endscreen';
+import Infoscreen from './infoscreen';
 
 const { floor, random } = Math;
 const maxGuesses = 6;
@@ -23,6 +24,7 @@ export default function Main() {
     <h1 className={scss.header}>
       Melodl
     </h1>
+    <Infoscreen maxGuesses={maxGuesses} />
     <div className={scss.goal}>
       <Goal.Shares />
     </div>
