@@ -2,18 +2,19 @@ import useLocalStorage from 'use-local-storage';
 
 import Heart from './heart';
 import Telephone from './telephone';
-
 import scss from '../styles/_infoscreen.module.scss';
+
+import HelpButton from './HelpButton';
 
 export default function Infoscreen({ maxGuesses }: { maxGuesses: number }) {
   const [show, setShow] = useLocalStorage('show-info', true);
 
   if (!show)
-    return null;
+    return <HelpButton setShow={setShow} />;
 
   return <dialog
     className={scss.infoscreen}
-    ref={el => el?.showModal()}
+    ref={el => el?.open || el?.showModal()}
     onClose={() => setShow(false)}
   >
     <button className={scss.close} onClick={() => setShow(false)} />
