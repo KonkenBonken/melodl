@@ -6,16 +6,18 @@ import Telephone from './telephone';
 import scss from '../styles/_infoscreen.module.scss';
 
 export default function Infoscreen({ maxGuesses }: { maxGuesses: number }) {
-  const [showInfo, setShowInfo] = useState(true);
+  const [show, setShow] = useState(true);
 
-  if (!showInfo)
+  if (!show)
     return null;
 
   return <dialog
     className={scss.infoscreen}
     ref={el => el?.showModal()}
-    onClose={() => setShowInfo(false)}
+    onClose={() => setShow(false)}
   >
+    <button className={scss.close} onClick={() => setShow(false)} />
+
     <h2>Welcome to Melodl!</h2>
     <h3>How to Play:</h3>
 

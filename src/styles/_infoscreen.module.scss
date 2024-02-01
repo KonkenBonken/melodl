@@ -6,8 +6,35 @@
   padding: 3vh 3vh 1.5vh;
   width: 50vw;
 
-  &:focus-visible {
+  &:focus-visible, > *:focus-visible {
     outline: none;
+  }
+
+  .close {
+    position: absolute;
+    top: 1.5vh;
+    right: 2vh;
+    width: 4vh;
+    height: 4vh;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    &::before, &::after {
+      content: '';
+      display: block;
+      margin: auto;
+      width: 3vh;
+      height: .3vh;
+      border-radius: .15vh;
+      background-color: #aaa;
+      position: absolute;
+      rotate: 45deg;
+    }
+
+    &::after {
+      rotate: -45deg;
+    }
   }
 
   > h2 {
