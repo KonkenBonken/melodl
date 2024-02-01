@@ -14,7 +14,6 @@ export default function Main() {
   const Goal = useMemo(() => Song.songs[floor(random() * Song.songs.length)], []);
   const [guesses, guessActions] = useArrayState<Song>();
   const [input, setInput] = useState('');
-  const [showInfo, setShowInfo] = useState(true);
 
   const win = guesses.at(-1) === Goal,
     lost = !win && guesses.length === maxGuesses,
@@ -25,7 +24,7 @@ export default function Main() {
     <h1 className={scss.header}>
       Melodl
     </h1>
-    {showInfo && <Infoscreen onClose={() => setShowInfo(false)} />}
+    <Infoscreen />
     <div className={scss.goal}>
       <Goal.Shares />
     </div>
