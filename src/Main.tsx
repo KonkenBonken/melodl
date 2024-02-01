@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react';
+import hasch from 'hasch';
 
 import scss from './styles/_main.module.scss';
 
@@ -7,11 +8,12 @@ import Song from './data';
 import Endscreen from './endscreen';
 import Infoscreen from './infoscreen';
 
-const { floor, random } = Math;
 const maxGuesses = 6;
 
 export default function Main() {
-  const Goal = useMemo(() => Song.songs[floor(random() * Song.songs.length)], []);
+  const day = Math.floor(Date.now() / 864e5),
+    Goal = useMemo(() => hasch(day, { choose: Song.songs }), [day]);
+
   const [guesses, setGuesses] = useDailySongStorage('guesses', []);
   const [input, setInput] = useState('');
 
