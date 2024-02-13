@@ -1,5 +1,6 @@
 import { useMemo, useState } from 'react';
 import hasch from 'hasch';
+import Helmet from 'react-helmet';
 
 import scss from './styles/_main.module.scss';
 
@@ -20,6 +21,9 @@ export default function Main() {
     ended = win || lost;
 
   return (<main>
+    <Helmet>
+      <title>Melodl</title>
+    </Helmet>
     <Song.Datalist input={input} />
     <h1 className={scss.header}>
       Melodl
